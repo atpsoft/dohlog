@@ -22,8 +22,8 @@ class Event
     @time.strftime("%Y-%m-%d %H:%M:%S.") << "%03d" % (@time.usec / 1000)
   end
 
-  def exception_name
-    if @exception then @exception.class.to_s else '' end
+  def exception_text
+    if @exception then "#{@exception.class} => #{@exception.message}" else '' end
   end
 
   def call_stack
