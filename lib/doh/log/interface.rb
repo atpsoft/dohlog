@@ -38,12 +38,4 @@ class Interface
   end
 end
 
-def self.setup(acceptor)
-  DohLog::Interface.setup(acceptor)
-end
-
-def self.shutdown
-  DohLog::Interface.shutdown
-end
-
 end
