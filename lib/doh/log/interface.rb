@@ -25,6 +25,10 @@ class Interface
     @@acceptor.add(Event.new(DohLog::INFO, msg, @location))
   end
 
+  def notify(msg)
+    @@acceptor.add(Event.new(DohLog::NOTIFY, msg, @location))
+  end
+
   def warn(msg)
     @@acceptor.add(Event.new(DohLog::WARN, msg, @location))
   end
