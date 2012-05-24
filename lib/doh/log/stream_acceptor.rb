@@ -9,12 +9,7 @@ class StreamAcceptor
   end
 
   def add(event)
-    @ios.puts(event.summary)
-    if event.severity >= DohLog::ERROR
-      @ios.puts("=> exception: #{event.exception_text}")
-      @ios.puts("=> stack:")
-      event.call_stack.each { |elem| @ios.puts("=> #{elem}") }
-    end
+    @ios.puts("#{event.summary}#{event.exception_text}")
     @ios.fsync if @flush
   end
 

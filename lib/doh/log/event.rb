@@ -23,7 +23,9 @@ class Event
   end
 
   def exception_text
-    if @exception then "#{@exception.class} => #{@exception.message}" else '' end
+    return '' unless @exception
+    stack = @exception.backtrace.collect { |elem| "=> #{elem}" }.join("\n")
+    "=> exception: #{@exception.class} => #{@exception.message}\n=> stack:\n#{stack}"
   end
 
   def call_stack
