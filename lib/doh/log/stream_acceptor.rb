@@ -9,7 +9,7 @@ class StreamAcceptor
   end
 
   def add(event)
-    @ios.puts("#{event.summary}#{event.exception_text}")
+    @ios.puts("#{event.summary}\n#{event.exception_text}")
     @ios.fsync if @flush
   end
 

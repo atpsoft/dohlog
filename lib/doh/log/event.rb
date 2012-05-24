@@ -25,7 +25,7 @@ class Event
   def exception_text
     return '' unless @exception
     stack = @exception.backtrace.collect { |elem| "=> #{elem}" }.join("\n")
-    "=> exception: #{@exception.class} => #{@exception.message}\n=> stack:\n#{stack}"
+    "=> exception: #{@exception.class} - #{@exception.message}\n=> stack:\n#{stack}"
   end
 
   def call_stack
