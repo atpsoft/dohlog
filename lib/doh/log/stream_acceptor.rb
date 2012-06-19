@@ -14,7 +14,7 @@ class StreamAcceptor
   end
 
   def shutdown
-    @ios.fsync
+    @ios.close
     @ios = nil
   end
 end
