@@ -17,20 +17,20 @@ class Interface
     @location = location
   end
 
-  def debug(msg)
-    @@acceptor.add(Event.new(DohLog::DEBUG, msg, @location))
+  def debug(msg, exception = nil)
+    @@acceptor.add(Event.new(DohLog::DEBUG, msg, @location, exception))
   end
 
-  def info(msg)
-    @@acceptor.add(Event.new(DohLog::INFO, msg, @location))
+  def info(msg, exception = nil)
+    @@acceptor.add(Event.new(DohLog::INFO, msg, @location, exception))
   end
 
-  def notify(msg)
-    @@acceptor.add(Event.new(DohLog::NOTIFY, msg, @location))
+  def notify(msg, exception = nil)
+    @@acceptor.add(Event.new(DohLog::NOTIFY, msg, @location, exception))
   end
 
-  def warn(msg)
-    @@acceptor.add(Event.new(DohLog::WARN, msg, @location))
+  def warn(msg, exception = nil)
+    @@acceptor.add(Event.new(DohLog::WARN, msg, @location, exception))
   end
 
   def error(msg, exception = nil)
