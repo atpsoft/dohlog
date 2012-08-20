@@ -39,6 +39,7 @@ class TestDisable < DohTest::TestGroup
     DohLog.disable
     dohlog.debug("blah")
     assert_equal(6, acceptor.events.size)
+    DohLog.enable
   end
 end
 
