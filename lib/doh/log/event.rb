@@ -3,10 +3,11 @@ require 'doh/log/severity'
 module DohLog
 
 class Event
-  attr_accessor :severity, :msg, :location, :exception, :time
+  attr_accessor :severity, :msg, :location, :exception, :extras, :time
 
   def initialize(severity, msg, location = '', exception = nil)
     @severity, @msg, @location, @exception = severity, msg, location, exception
+    @extras = {}
     @time = Time.now
   end
 
@@ -33,7 +34,16 @@ class Event
   end
 
   def summary
-    "#{datetime_text} [#{severity_text}] (#{location}) : #{msg}"
+    if @extras.empty?
+      extra_str = ''
+    else
+      extra_ary = []
+      @extras.each_pair do |key, value|
+        extra_ary << "#{key}: #{value}"
+      end
+      extra_str = "<#{extra_ary.join(', ')}> "
+    end
+    "#{datetime_text} [#{severity_text}] (#{location}) #{extra_str}: #{msg}"
   end
 end
 
