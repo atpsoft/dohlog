@@ -1,6 +1,8 @@
 module DohLog
 
 class MultiAcceptor
+  attr_reader :acceptors
+
   def initialize(*acceptors)
     @acceptors = acceptors
   end
