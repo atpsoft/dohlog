@@ -3,9 +3,8 @@ module DohLog
 class StreamAcceptor
   attr_reader :ios
 
-  def initialize(flush, ios = nil)
-    @ios = ios || STDOUT
-    @ios.sync = flush
+  def initialize(ios)
+    @ios = ios
   end
 
   def add(event)
@@ -13,7 +12,6 @@ class StreamAcceptor
   end
 
   def shutdown
-    @ios.close
     @ios = nil
   end
 end

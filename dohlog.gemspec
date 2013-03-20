@@ -2,7 +2,7 @@ require 'rake'
 
 Gem::Specification.new do |s|
   s.name = 'dohlog'
-  s.version = '0.1.10'
+  s.version = '0.1.11'
   s.summary = 'simple logging framework'
   s.description = 'Logging framework built to be fast and flexible.'
   s.require_path = 'lib'
