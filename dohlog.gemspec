@@ -2,9 +2,9 @@ require 'rake'
 
 Gem::Specification.new do |s|
   s.name = 'dohlog'
-  s.version = '0.1.9'
-  s.summary = 'zeromq powered logging framework (eventually)'
-  s.description = 'Logging framework built to be fast and flexible by leveraging the power of zeromq.'
+  s.version = '0.1.10'
+  s.summary = 'simple logging framework'
+  s.description = 'Logging framework built to be fast and flexible.'
   s.require_path = 'lib'
   s.required_ruby_version = '>= 1.9.2'
   s.add_runtime_dependency 'dohutil', '>= 0.2.3'

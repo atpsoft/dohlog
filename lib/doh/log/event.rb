@@ -43,7 +43,7 @@ class Event
       end
       extra_str = "<#{extra_ary.join(', ')}> "
     end
-    "#{datetime_text} [#{severity_text}] (#{location}) #{extra_str}: #{msg}"
+    "#{datetime_text} <#{Process.pid}> [#{severity_text}] (#{location}) #{extra_str}: #{msg}"
   end
 end
 
