@@ -1,5 +1,6 @@
 require 'dohlog/interface'
 require 'dohlog/integrate'
+require 'dohlog/stream_acceptor'
 
 module DohLog
 extend self
