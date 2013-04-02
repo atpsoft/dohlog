@@ -4,6 +4,7 @@ module DohLog
 
 class Interface
   @@acceptor = nil
+  @@enabled = true
 
   def self.setup(acceptor)
     @@acceptor = acceptor
@@ -13,32 +14,52 @@ class Interface
     @@acceptor.shutdown
   end
 
+  def self.enable
+    @@enabled = true
+  end
+
+  def self.disable
+    @@enabled = false
+  end
+
   def initialize(location)
     @location = location
   end
 
   def debug(msg, exception = nil)
-    @@acceptor.add(Event.new(DohLog::DEBUG, msg, @location, exception))
+    if @@enabled
+      @@acceptor.add(Event.new(DohLog::DEBUG, msg, @location, exception))
+    end
   end
 
   def info(msg, exception = nil)
-    @@acceptor.add(Event.new(DohLog::INFO, msg, @location, exception))
+    if @@enabled
+      @@acceptor.add(Event.new(DohLog::INFO, msg, @location, exception))
+    end
   end
 
   def notify(msg, exception = nil)
-    @@acceptor.add(Event.new(DohLog::NOTIFY, msg, @location, exception))
+    if @@enabled
+      @@acceptor.add(Event.new(DohLog::NOTIFY, msg, @location, exception))
+    end
   end
 
   def warn(msg, exception = nil)
-    @@acceptor.add(Event.new(DohLog::WARN, msg, @location, exception))
+    if @@enabled
+      @@acceptor.add(Event.new(DohLog::WARN, msg, @location, exception))
+    end
   end
 
   def error(msg, exception = nil)
-    @@acceptor.add(Event.new(DohLog::ERROR, msg, @location, exception))
+    if @@enabled
+      @@acceptor.add(Event.new(DohLog::ERROR, msg, @location, exception))
+    end
   end
 
   def fatal(msg, exception = nil)
-    @@acceptor.add(Event.new(DohLog::FATAL, msg, @location, exception))
+    if @@enabled
+      @@acceptor.add(Event.new(DohLog::FATAL, msg, @location, exception))
+    end
   end
 end
 

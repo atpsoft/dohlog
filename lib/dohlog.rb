@@ -1,26 +1,23 @@
-require 'doh/log/stub'
 require 'dohlog/interface'
+require 'dohlog/integrate'
 
 module DohLog
+extend self
 
-def self.setup(acceptor)
-  require 'dohlog/integrate'
+def setup(acceptor)
   DohLog::Interface.setup(acceptor)
 end
 
-def self.shutdown
+def shutdown
   DohLog::Interface.shutdown
 end
 
-def self.disable
-  return if dohlog == StubInterface
-  load 'dohlog/unintegrate.rb'
-  load 'doh/log/stub.rb'
+def enable
+  DohLog::Interface.enable
 end
 
-def self.enable
-  return unless dohlog == StubInterface
-  load 'dohlog/integrate.rb'
+def disable
+  DohLog::Interface.disable
 end
 
 end
