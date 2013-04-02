@@ -1,4 +1,4 @@
-require 'doh/log/event'
+require 'dohlog/event'
 
 module DohLog
 

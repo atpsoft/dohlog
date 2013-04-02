@@ -1,4 +1,4 @@
-require 'doh/log/severity'
+require 'dohlog/severity'
 
 module DohLog
 

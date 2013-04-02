@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
-require 'doh/log'
-require 'doh/log/stream_acceptor'
+require 'dohlog'
+require 'dohlog/stream_acceptor'
 
 acceptor = DohLog::StreamAcceptor.new(false, File.new('dohlog_sample.log', 'w+'))
 DohLog::setup(acceptor)

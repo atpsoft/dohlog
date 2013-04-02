@@ -1,5 +1,5 @@
-require 'doh/log'
-require 'doh/log/memory_acceptor'
+require 'dohlog'
+require 'dohlog/memory_acceptor'
 
 module DohLog
 
