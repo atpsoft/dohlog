@@ -4,10 +4,11 @@ module DohLog
 
 class Interface
   @@acceptor = nil
-  @@enabled = true
+  @@enabled = false
 
   def self.setup(acceptor)
     @@acceptor = acceptor
+    @@enabled = true
   end
 
   def self.shutdown
