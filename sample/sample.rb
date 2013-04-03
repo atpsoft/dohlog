@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 require 'dohlog'
-require 'dohlog/stream_acceptor'
 
 acceptor = DohLog::StreamAcceptor.new(false, File.new('dohlog_sample.log', 'w+'))
 DohLog::setup(acceptor)
@@ -12,12 +11,6 @@ begin
   raise "failed to do something important"
 rescue => excpt
   dohlog.error("definitely not good", excpt)
-end
-
-begin
-  raise "vital stuff couldn't happen"
-rescue => excpt
-  dohlog.fatal("very very bad", excpt)
 end
 
 DohLog::shutdown

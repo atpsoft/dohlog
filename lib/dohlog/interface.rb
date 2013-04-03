@@ -39,12 +39,6 @@ class Interface
     end
   end
 
-  def notify(msg, exception = nil)
-    if @@enabled
-      @@acceptor.add(Event.new(DohLog::NOTIFY, msg, @location, exception))
-    end
-  end
-
   def warn(msg, exception = nil)
     if @@enabled
       @@acceptor.add(Event.new(DohLog::WARN, msg, @location, exception))
@@ -54,12 +48,6 @@ class Interface
   def error(msg, exception = nil)
     if @@enabled
       @@acceptor.add(Event.new(DohLog::ERROR, msg, @location, exception))
-    end
-  end
-
-  def fatal(msg, exception = nil)
-    if @@enabled
-      @@acceptor.add(Event.new(DohLog::FATAL, msg, @location, exception))
     end
   end
 end

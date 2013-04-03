@@ -2,11 +2,9 @@ module DohLog
 
 DEBUG = 0
 INFO = 1
-NOTIFY = 2
-WARN = 3
-ERROR = 4
-FATAL = 5
-SEVERITY_LEVELS = %w(debug info NOTIFY WARNING ERROR ***FATAL***)
+WARN = 2
+ERROR = 3
+SEVERITY_LEVELS = %w(debug info WARNING ERROR)
 
 def self.severity_text(level)
   SEVERITY_LEVELS[level]
