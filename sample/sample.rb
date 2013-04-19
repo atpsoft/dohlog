@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 require 'dohlog'
 
-acceptor = DohLog::StreamAcceptor.new(false, File.new('dohlog_sample.log', 'w+'))
+acceptor = DohLog::StreamAcceptor.new(File.new('dohlog_sample.log', 'w+'))
 DohLog::setup(acceptor)
 dohlog.debug("hello this some very detailed stuff")
 dohlog.info("this is a bit more normal type of thing")
