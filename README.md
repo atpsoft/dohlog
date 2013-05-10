@@ -1,6 +1,8 @@
 DohLog
 ========
 
+[![Build Status](https://travis-ci.org/atpsoft/dohlog.png)](https://travis-ci.org/atpsoft/dohlog)
+
 DohLog is a library designed to help simplify logging
 
 A sample exists in the sample directory.
