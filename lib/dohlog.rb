@@ -18,7 +18,10 @@ def enable
 end
 
 def disable
-  DohLog::Interface.disable
+  return DohLog::Interface.disable if !block_given?
+  DohLog::Interface.disable do
+    yield
+  end
 end
 
 end

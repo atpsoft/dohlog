@@ -21,6 +21,13 @@ class Interface
 
   def self.disable
     @@enabled = false
+    if block_given?
+      begin
+        yield
+      ensure
+        @@enabled = true
+      end
+    end
   end
 
   def initialize(location)
