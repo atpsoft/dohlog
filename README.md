@@ -2,6 +2,7 @@ DohLog
 ========
 
 [![Build Status](https://travis-ci.org/atpsoft/dohlog.png)](https://travis-ci.org/atpsoft/dohlog)
+[![Code Climate](https://codeclimate.com/github/atpsoft/dohlog.png)](https://codeclimate.com/github/atpsoft/dohlog)
 
 DohLog is a library designed to help simplify logging
 
