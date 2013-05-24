@@ -43,7 +43,8 @@ class Event
       end
       extra_str = "<#{extra_ary.join(', ')}> "
     end
-    "#{datetime_text} <#{Process.pid}> [#{severity_text}] (#{location}) #{extra_str}: #{msg}"
+    threadstr = ":#{Thread.current.object_id}" if DohLog.should_log_thread_ids
+    "#{datetime_text} <#{Process.pid}#{threadstr}> [#{severity_text}] (#{location}) #{extra_str}: #{msg}"
   end
 end
 
