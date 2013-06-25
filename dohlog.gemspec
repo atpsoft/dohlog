@@ -2,7 +2,7 @@ require 'rake'
 
 Gem::Specification.new do |s|
   s.name = 'dohlog'
-  s.version = '0.2.3'
+  s.version = '0.2.4'
   s.summary = 'simple logging framework'
   s.description = 'Logging framework built to be fast and flexible.'
   s.require_path = 'lib'
@@ -16,5 +16,5 @@ Gem::Specification.new do |s|
   s.email = ['devinfo@atpsoft.com']
   s.extra_rdoc_files = ['MIT-LICENSE']
   s.test_files = FileList["{test}/**/*.rb"].to_a
-  s.files = files = FileList["{lib}/**/*"].to_a
+  s.files = FileList["{lib}/**/*"].to_a
 end

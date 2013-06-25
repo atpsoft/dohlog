@@ -35,25 +35,25 @@ class Interface
   end
 
   def debug(msg, exception = nil)
-    if @@enabled
+    if @@enabled && @@acceptor
       @@acceptor.add(Event.new(DohLog::DEBUG, msg, @location, exception))
     end
   end
 
   def info(msg, exception = nil)
-    if @@enabled
+    if @@enabled && @@acceptor
       @@acceptor.add(Event.new(DohLog::INFO, msg, @location, exception))
     end
   end
 
   def warn(msg, exception = nil)
-    if @@enabled
+    if @@enabled && @@acceptor
       @@acceptor.add(Event.new(DohLog::WARN, msg, @location, exception))
     end
   end
 
   def error(msg, exception = nil)
-    if @@enabled
+    if @@enabled && @@acceptor
       @@acceptor.add(Event.new(DohLog::ERROR, msg, @location, exception))
     end
   end
