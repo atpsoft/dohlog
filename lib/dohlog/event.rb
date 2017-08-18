@@ -25,7 +25,11 @@ class Event
 
   def exception_text
     return '' unless @exception
-    stack = @exception.backtrace.collect { |elem| "=> #{elem}" }.join("\n")
+    if @exception.backtrace
+      stack = @exception.backtrace.collect { |elem| "=> #{elem}" }.join("\n")
+    else
+      stack = 'no backtrace available...?'
+    end
     "=> exception: #{@exception.class} - #{@exception.message}\n=> stack:\n#{stack}"
   end
 
