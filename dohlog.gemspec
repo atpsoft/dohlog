@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 2.2.0'
   s.add_runtime_dependency 'dohutil', '~> 0.2', '>= 0.2.29'
   s.add_development_dependency 'dohtest', '~> 0.1', '>= 0.1.48'
-  s.authors = ['Makani Mason', 'Kem Mason']
+  s.authors = ['ATPSoft']
   s.bindir = 'bin'
   s.homepage = 'https://github.com/atpsoft/dohlog'
   s.license = 'MIT'
